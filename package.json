@@ -1,0 +1,42 @@
+{
+  "name": "@microstates/lens",
+  "version": "1.0.0",
+  "description": "Tiny functional lenses that emerged from building microstates.js",
+  "repository": "http://github.com/microstates/lens",
+  "author": "Charles Lowell <cowboyd@frontside.io>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "pack build",
+    "prepare": "yarn build",
+    "publish": "pack publish",
+    "prepublishOnly": "yarn test && yarn build"
+  },
+  "dependencies": {
+    "funcadelic": "^0.5.7"
+  },
+  "devDependencies": {
+    "@pika/pack": "0.3.7",
+    "@pika/plugin-build-node": "0.3.16",
+    "@pika/plugin-build-web": "0.3.16",
+    "@pika/plugin-standard-pkg": "0.3.16"
+  },
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-standard-pkg",
+        {
+          "exclude": [
+            "tests/**/*"
+          ]
+        }
+      ],
+      [
+        "@pika/plugin-build-node"
+      ],
+      [
+        "@pika/plugin-build-web"
+      ]
+    ]
+  }
+}
