@@ -11,7 +11,8 @@
     "prepare": "yarn build",
     "publish": "pack publish",
     "prepublishOnly": "yarn test && yarn build",
-    "test": "mocha --recursive -r tests/setup tests"
+    "test": "mocha --recursive -r tests/setup tests",
+    "lint": "eslint ./"
   },
   "dependencies": {
     "funcadelic": "^0.5.7"
@@ -24,6 +25,9 @@
     "@pika/plugin-build-node": "0.3.16",
     "@pika/plugin-build-web": "0.3.16",
     "@pika/plugin-standard-pkg": "0.3.16",
+    "babel-eslint": "10.0.1",
+    "eslint": "5.16.0",
+    "eslint-plugin-prefer-let": "1.0.1",
     "expect": "24.7.1",
     "mocha": "6.1.4"
   },

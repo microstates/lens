@@ -5,7 +5,7 @@ import CachedProperty from './cached-property';
 export const Tree = type(class {
   static get name() {
     return 'Tree';
-  };
+  }
 
   childAt(key, parent) {
     if (parent[Tree.symbol]) {
