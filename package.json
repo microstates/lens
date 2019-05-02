@@ -1,6 +1,6 @@
 {
   "name": "@microstates/lens",
-  "version": "1.0.0",
+  "version": "1.0.0-beta.0",
   "description": "Tiny functional lenses that emerged from building microstates.js",
   "repository": "http://github.com/microstates/lens",
   "author": "Charles Lowell <cowboyd@frontside.io>",
