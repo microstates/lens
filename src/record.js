@@ -1,12 +1,12 @@
 import { type } from 'funcadelic';
 
-export const Tree = type(class {
+export const Record = type(class {
   static get name() {
-    return 'Tree';
+    return 'Record';
   }
 
   childAt(key, parent) {
-    if (parent[Tree.symbol]) {
+    if (parent[Record.symbol]) {
       return this(parent).childAt(key, parent);
     } else {
       return parent[key];
@@ -14,4 +14,4 @@ export const Tree = type(class {
   }
 });
 
-export const { childAt } = Tree.prototype;
+export const { childAt } = Record.prototype;
