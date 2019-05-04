@@ -1,6 +1,5 @@
 import { Functor, map, Semigroup } from 'funcadelic';
-
-import { childAt } from './context';
+import { at } from './context';
 
 class Box {
   static get of() {
@@ -61,7 +60,7 @@ export function Lens(get, set) {
 export const transparent = Lens(x => x, y => y);
 
 export function At(property, container) {
-  let get = context => context != null ? childAt(property, context) : undefined;
+  let get = context => context != null ? at(property, context) : undefined;
   let set = (part, whole) => {
     let context = whole == null ? (Array.isArray(container) ? [] : {}) : whole;
     if (part === context[property]) {
