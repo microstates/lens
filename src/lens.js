@@ -64,7 +64,7 @@ const isInteger =  n => (n << 0) === n;
 export function At(property, container) {
   let get = context => context != null ? at(property, context) : undefined;
   let set = (part, whole) => {
-    let context = whole == null ? (Array.isArray(container) ? [] : isInteger(property) ? [] : {}) : whole;
+    let context = whole == null ? (Array.isArray(container) || isInteger(property)) ? [] : {} : whole;
     if (part === context[property]) {
       return context;
     } else if (Array.isArray(context)) {
