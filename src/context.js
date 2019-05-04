@@ -1,12 +1,12 @@
 import { type } from 'funcadelic';
 
-export const Record = type(class {
+export const Context = type(class {
   static get name() {
-    return 'Record';
+    return 'Context';
   }
 
   childAt(key, parent) {
-    if (parent[Record.symbol]) {
+    if (parent[Context.symbol]) {
       return this(parent).childAt(key, parent);
     } else {
       return parent[key];
@@ -14,4 +14,4 @@ export const Record = type(class {
   }
 });
 
-export const { childAt } = Record.prototype;
+export const { childAt } = Context.prototype;
