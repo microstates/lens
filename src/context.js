@@ -5,13 +5,13 @@ export const Context = type(class {
     return 'Context';
   }
 
-  childAt(key, parent) {
+  at(key, parent) {
     if (parent[Context.symbol]) {
-      return this(parent).childAt(key, parent);
+      return this(parent).at(key, parent);
     } else {
       return parent[key];
     }
   }
 });
 
-export const { childAt } = Context.prototype;
+export const { at } = Context.prototype;
