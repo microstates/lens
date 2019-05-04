@@ -1,6 +1,6 @@
 import { Functor, map, Semigroup } from 'funcadelic';
 
-import { childAt } from './tree';
+import { childAt } from './record';
 
 class Box {
   static get of() {
