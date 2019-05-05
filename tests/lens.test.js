@@ -27,6 +27,20 @@ describe("At", function() {
   });
 });
 
+describe('creating arrays', () => {
+  describe('when focusing on location 2', () => {
+    let lens;
+    let value;
+    beforeEach(() => {
+      lens = At(2);
+      value = set(lens, 'hi', undefined);
+    });
+    it('creates an array with value at 2nd position', () => {
+      expect(value).toEqual([undefined,undefined,'hi']);
+    });
+  });
+});
+
 describe("Path", () => {
   let userNameLens;
   let result;
